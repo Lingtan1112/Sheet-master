@@ -1,0 +1,29 @@
+
+<div class="fixed">
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="" (click)="openSideNav()" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <button [disableRipple]="true" mat-icon-button aria-label="Example icon-button with menu icon">
+          <mat-icon>stream</mat-icon><span class="logo-title">SmartSheet</span>
+        </button>
+        <span class="example-spacer"></span>
+    
+        <button mat-icon-button class="favorite-icon" mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with heart icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item><mat-icon>account_circle</mat-icon>Profile</button>
+          <button mat-menu-item><mat-icon>settings</mat-icon>Settings</button>
+          <button mat-menu-item><mat-icon>loyalty</mat-icon>Subscribe</button>
+          <button mat-menu-item><mat-icon>logout</mat-icon>Logout</button>
+
+        </mat-menu>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+      <app-side-nav [showChild]="showParent"></app-side-nav>
+    </div>
+    
+      
+    

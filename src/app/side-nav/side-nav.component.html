@@ -1,0 +1,9 @@
+<div class="fixed">
+    <mat-drawer-container class="example-container">
+       <mat-drawer [(opened)]="showChild" #drawer class="example-sidenav">
+         <button routerLink="/create" routerLinkActive="active" mat-menu-item ><mat-icon>add</mat-icon><span class="">Create a Sheet</span></button>
+         <button routerLink="/list" routerLinkActive="active" mat-menu-item ><mat-icon>queue</mat-icon><span>My Sheets</span></button>
+       </mat-drawer>
+       <router-outlet></router-outlet>
+     </mat-drawer-container>
+   </div>

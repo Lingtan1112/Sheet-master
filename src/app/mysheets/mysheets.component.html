@@ -1,0 +1,32 @@
+
+<div fxLayout="row" fxLayoutGap="" style="flex-wrap: wrap;" class="rowWrap">
+  <div *ngFor="let sheet of sheetList;" class="sm-pad">
+      <mat-card class="example-card">
+      <mat-card-title>{{sheet.title}}</mat-card-title>
+      <mat-card-content>
+        <p>{{sheet.description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+          <div class="example-button-row">
+              <div class="example-flex-container">
+                <button mat-icon-button color="success" aria-label="Example icon button with a vertical three dot icon">
+                  <mat-icon>add</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" aria-label="Example icon button with a menu icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button color="accent" aria-label="Example icon button with a open in new tab icon">
+                  <mat-icon>star</mat-icon>
+                </button>
+                <button mat-icon-button aria-label="Example icon button with a open in new tab icon">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+              </div>
+            </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
