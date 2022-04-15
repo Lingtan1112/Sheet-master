@@ -25,6 +25,9 @@ import { MysheetsComponent } from './mysheets/mysheets.component';
 import {MatCardModule} from '@angular/material/card';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SheetServiceService } from './sheet-service.service';
+import { SubSheetsComponent } from './sub-sheets/sub-sheets.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CreateSheetComponent,
     SideNavComponent,
     MysheetsComponent,
+    SubSheetsComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,10 +54,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatInputModule,
     MatCardModule,
     FlexLayoutModule,
+    MatDialogModule,
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
-    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher},
+    SheetServiceService
   ],
   bootstrap: [AppComponent]
 })
