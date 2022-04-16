@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SheetServiceService } from '../sheet-service.service';
 
 @Component({
@@ -9,13 +10,16 @@ import { SheetServiceService } from '../sheet-service.service';
 })
 export class MysheetsComponent implements OnInit {
 
-  public description = 'This sheet is for Demo purpose';
-  public sheetTitle = 'Demo Sheet';
   public sheetList : any[] = [];
+  public subSheetList : any[] = [];
+
   constructor(private sheetService : SheetServiceService,public dialog: MatDialog ) { }
-  
-  openDialog() {
-    this.dialog.open(DialogElementsExampleDialog);
+
+  getSheetById(id:number) {
+    this.subSheetList = this.sheetService.getSubSheets(1);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = this.subSheetList;
+    this.dialog.open(DialogElementsExampleDialog,dialogConfig);
   }
 
   ngOnInit(): void {
@@ -28,4 +32,16 @@ export class MysheetsComponent implements OnInit {
   selector: 'app-sub-sheets',
   templateUrl: '../sub-sheets/sub-sheets.component.html',
 })
-export class DialogElementsExampleDialog {}
+export class DialogElementsExampleDialog {
+  
+  constructor(private dialogRef: MatDialogRef<DialogElementsExampleDialog>, @Inject(MAT_DIALOG_DATA) subSheetParam:any){
+    this.subSheetList = subSheetParam;
+    console.log(this.subSheetList);
+  }
+
+  public subSheetList : any[] = [];
+  
+  ngOnInit(): void {
+    
+  }
+}

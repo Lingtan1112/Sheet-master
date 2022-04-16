@@ -1,5 +1,20 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
-<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
-<button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-  Close
-</button>
+<div style="width:500px">
+  <h1 mat-dialog-title>Sheets</h1>
+  <div *ngFor="let sheets of subSheetList;" class="mt-10">
+  <mat-card  matRipple 
+  [matRippleCentered]="false" 
+  [matRippleDisabled]="false" 
+  [matRippleUnbounded]="false" 
+  class="subsheets sm-pad">
+    <div fxLayout="row" fxLayoutGap="" style="flex-wrap: wrap;" class="rowWrap">
+    <div>
+        <span>{{sheets.index}}.{{sheets.sheetName}}</span>
+    </div>
+
+  </div>
+  </mat-card>
+  </div>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

@@ -21,13 +21,15 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
-import { MysheetsComponent } from './mysheets/mysheets.component';
+import { DialogElementsExampleDialog, MysheetsComponent } from './mysheets/mysheets.component';
 import {MatCardModule} from '@angular/material/card';
 import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SheetServiceService } from './sheet-service.service';
 import { SubSheetsComponent } from './sub-sheets/sub-sheets.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     SideNavComponent,
     MysheetsComponent,
     SubSheetsComponent,
+    DialogElementsExampleDialog,
+    
   ],
+  entryComponents:[DialogElementsExampleDialog],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -55,6 +60,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatCardModule,
     FlexLayoutModule,
     MatDialogModule,
+    MatDividerModule,
+    MatRippleModule,
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
