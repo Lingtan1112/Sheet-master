@@ -16,7 +16,11 @@ export class MysheetsComponent implements OnInit {
   constructor(private sheetService : SheetServiceService,public dialog: MatDialog ) { }
 
   getSheetById(id:number) {
-    this.subSheetList = this.sheetService.getSubSheets(1);
+
+
+    this.sheetService.getSubSheets(1).subscribe(res=>{
+      console.log(res);
+    });
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = this.subSheetList;
     this.dialog.open(DialogElementsExampleDialog,dialogConfig);
@@ -36,7 +40,7 @@ export class DialogElementsExampleDialog {
   
   constructor(private dialogRef: MatDialogRef<DialogElementsExampleDialog>, @Inject(MAT_DIALOG_DATA) subSheetParam:any){
     this.subSheetList = subSheetParam;
-    console.log(this.subSheetList);
+    console.log('Demo',this.subSheetList);
   }
 
   public subSheetList : any[] = [];

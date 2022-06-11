@@ -30,6 +30,7 @@ import { SubSheetsComponent } from './sub-sheets/sub-sheets.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRippleModule} from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import {MatRippleModule} from '@angular/material/core';
     MatDialogModule,
     MatDividerModule,
     MatRippleModule,
+    HttpClientModule,
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},

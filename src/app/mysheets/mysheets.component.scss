@@ -4,11 +4,44 @@
   }
 
 .sm-pad{
-  padding:20px;
-  padding-right:0px;
+  padding:10px;
+  //padding-right:0px;
 }
 
 .rowWrap{
   display: flex;
   flex-flow: row wrap;
+}
+
+.card {
+  float: left;
+  width: calc(25% - 20px);
+  padding: 25px;
+  border-radius: 10px;
+  margin: 10px;
+  max-width: 300px;
+  width:200px;
+}
+.card p {
+  font-size: 18px;
+}
+.cardContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+     width: 100%;
+  }
+}
+
+.content{
+ padding:20px;
+ background: #e6e8eb;
+}
+
+.sheet-card{
+  //width:200px;
 }

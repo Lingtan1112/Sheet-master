@@ -7,6 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
+  closeNav(){
+    //let el: HTMLElement = this.myDiv.nativeElement;
+    //el.click();
+  }
+
   showFiller = false;
   
   @Input() public showChild : any = false;
